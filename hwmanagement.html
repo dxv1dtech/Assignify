@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignify - Manager de teme</title>
+  <link rel="stylesheet" href="css/index.css"/>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <h2 class="logo-text">Assignify</h2>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-btn">Pagina principală</a>
+        <div class="dropdown">
+          <button class="dropbtn">Adaugă temă</button>
+          <div class="dropdown-content">
+            <div class="dropdown-header">
+              <h3>Adaugă o temă nouă</h3>
+            </div>
+            <div class="dropdown-form">
+              <div class="form-group">
+                <label for="hw_type">Tip:</label>
+                <select id="hw_type" class="form-select">
+                  <option value="default" selected>-- Selectează tipul --</option>
+                  <option value="Proiect">Proiect</option>
+                  <option value="Temă">Temă</option>
+                  <option value="Prezentare">Prezentare</option>
+                  <option value="Altele">Altele</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="hw_class">Materie:</label>
+                <select id="hw_class" class="form-select">
+                  <option value="default" selected>-- Selectează materia --</option>
+                  <option value="Matematică">Matematică</option>
+                  <option value="Română">Română</option>
+                  <option value="Engleză">Engleză</option>
+                  <option value="Biologie">Biologie</option>
+                  <option value="Fizică">Fizică</option>
+                  <option value="Chimie">Chimie</option>
+                  <option value="Istorie">Istorie</option>
+                  <option value="Geografie">Geografie</option>
+                  <option value="Informatică">Informatică</option>
+                  <option value="Altele">Altele</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="hw_input">Descriere:</label>
+                <input type="text" id="hw_input" placeholder="Introdu descrierea..." />
+              </div>
+              <div class="form-group">
+                <label for="hw_duedate">Termen limită:</label>
+                <div class="date-field">
+                  <input type="date" id="hw_duedate" />
+                </div>
+              </div>
+              <div class="button-group">
+                <button id="hw_adder" class="primary-btn">Adaugă</button>
+                <button id="delete_all" class="danger-btn">Șterge toate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section id="hw_container">
+    </section>
+  </main>
+
+  <script src="js/dropdown.js"></script>
+  <script src="js/homework.js"></script>
+</body>
+
+</html>
