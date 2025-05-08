@@ -1,7 +1,4 @@
-
-
 const citat_container = document.getElementById("citat");
-
 
 let citate = [
     "Succesul este suma unor mici eforturi, repetate zi de zi",
