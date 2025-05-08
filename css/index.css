@@ -83,8 +83,7 @@ body {
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  margin-left: 0.75rem;
-  margin-top: 0.3rem;
+  
 }
 
 .info-btn:hover {
@@ -93,6 +92,7 @@ body {
 
 
 @media (min-width: 601px) {
+  
   .navbar-container .info-btn {
     display: none; 
   }
@@ -103,6 +103,11 @@ body {
 }
 
 @media (max-width: 600px) {
+  .info-btn {
+    margin-left: 0.75rem;
+    margin-top: 0.3rem;
+  }
+
   .navbar-container .info-btn {
     display: flex;
     position: absolute;
