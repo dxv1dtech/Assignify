@@ -3,12 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const dropdownContent = document.querySelector('.dropdown-content');
   
   if (dropdownBtn && dropdownContent) {
-    // Toggle dropdown when button is clicked
     dropdownBtn.addEventListener('click', function(e) {
       e.stopPropagation();
       dropdownContent.classList.toggle('show');
       
-      // Add/remove rotation for dropdown arrow
       if (dropdownContent.classList.contains('show')) {
         this.style.transform = 'translateY(-2px)';
         this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
@@ -17,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.boxShadow = '';
       }
     });
-    
-    // Close dropdown when clicking elsewhere
+
     document.addEventListener('click', function() {
       if (dropdownContent.classList.contains('show')) {
         dropdownContent.classList.remove('show');
@@ -29,12 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Prevent clicks inside dropdown from closing it
     dropdownContent.addEventListener('click', function(e) {
       e.stopPropagation();
     });
 
-    // Add focus styling for form elements
     const formInputs = dropdownContent.querySelectorAll('input, select');
     formInputs.forEach(input => {
       input.addEventListener('focus', function() {

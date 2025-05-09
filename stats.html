@@ -50,22 +50,19 @@
     }
 
     function loadStats() {
-    // Get stored homework data
+
     const types = JSON.parse(localStorage.getItem("types")) || [];
     const messages = JSON.parse(localStorage.getItem("messages")) || [];
     const classes = JSON.parse(localStorage.getItem("classes")) || [];
     
-    // Count each homework type
     const countTema = types.filter(item => item === "Temă").length;
     const countProiect = types.filter(item => item === "Proiect").length;
     const countPrezentare = types.filter(item => item === "Prezentare").length;
     const countAltele = types.filter(item => item === "Altele").length;
     const totalCount = types.length;
     
-    // Get the container element
     const statsContainer = document.querySelector(".main-content");
     
-    // Create header section
     const headerSection = document.createElement("section");
     headerSection.classList.add("stats-header");
     
@@ -79,11 +76,9 @@
     
     statsContainer.appendChild(headerSection);
     
-    // Create stats cards section
     const cardsSection = document.createElement("section");
     cardsSection.classList.add("stats-cards");
     
-    // Create stats cards for each homework type
     cardsSection.appendChild(createStatsCard("Teme", countTema, "#3498db"));
     cardsSection.appendChild(createStatsCard("Proiecte", countProiect, "#e74c3c"));
     cardsSection.appendChild(createStatsCard("Prezentări", countPrezentare, "#2ecc71"));
@@ -91,9 +86,7 @@
     
     statsContainer.appendChild(cardsSection);
     
-    // Create class distribution section if there are any homeworks
     if (totalCount > 0) {
-        // Get unique classes and their counts
         const classCountMap = {};
         classes.forEach(className => {
         if (classCountMap[className]) {
@@ -113,7 +106,6 @@
         const classListSection = document.createElement("div");
         classListSection.classList.add("class-distribution");
         
-        // Create a card for each class
         Object.entries(classCountMap).forEach(([className, count]) => {
             const classItem = document.createElement("div");
             classItem.classList.add("class-item");
@@ -146,6 +138,7 @@
     // Load stats when the page loads
     window.addEventListener("DOMContentLoaded", loadStats);
 </script>
+
 </body>
 
 </html>
